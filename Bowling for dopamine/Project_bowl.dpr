@@ -20,10 +20,10 @@ uses
   - (a,b)(c,_) -> 10+c | a+b = 10
 
   If on his first try in the frame he knocks down all the pins, this is called a �strike�. His turn is over, and his score for the frame is ten plus the simple total of the pins knocked down in his next two rolls.
-  - (x,_)(c,d) -> 10+c+d
+  - (x,_)(c,d) -> 10+c+d (or 20+e)
 
   If he gets a spare or strike in the last (tenth) frame, the bowler gets to throw one or two more bonus balls, respectively. These bonus throws are taken as part of the same turn. If the bonus throws knock down all the pins, the process does not repeat: the bonus throws are only used to calculate the score of the final frame.
-  - frame 11 = frame 10
+  - frames 11 & 12 = frame 10
 
   The game score is the total of all frame scores.
 }
