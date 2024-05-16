@@ -22,15 +22,16 @@ uses
   If on his first try in the frame he knocks down all the pins, this is called a �strike�. His turn is over, and his score for the frame is ten plus the simple total of the pins knocked down in his next two rolls.
   - (x,_)(c,d) -> 10+c+d (or 20+e)
 
-  If he gets a spare or strike in the last (tenth) frame, the bowler gets to throw one or two more bonus balls, respectively. These bonus throws are taken as part of the same turn. If the bonus throws knock down all the pins, the process does not repeat: the bonus throws are only used to calculate the score of the final frame.
+  If he gets a spare or strike in the last (tenth) frame, the bowler gets to throw one or two more bonus balls, respectively. 
+  These bonus throws are taken as part of the same turn. 
+  If the bonus throws knock down all the pins, the process does not repeat: the bonus throws are only used to calculate the score of the final frame.
   - frames 11 & 12 = frame 10
 
   The game score is the total of all frame scores.
 }
 
 const
-    N = 5;
-
+    N = 6;
     Test_Data : array [1..N] of string =
               (
                  'X. X. X. X. X. X. X. X. X. X. X. X.' ,   //  (12 rolls: 12 strikes) = 10 frames * 30 points = 300
@@ -38,6 +39,7 @@ const
                  '5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5. ..' ,   //  (21 rolls: 10 pairs of 5 and spare, with a final 5) = 10 frames * 15 points = 150
                  '-- -- -- -- -- -- -- -- -- 5- .. ..' ,   //   5
                  '1- 2- 3/ X. -4 -5 9/ -- X. 1/ 4. ..'     //   1  3  23  37  41  46  56  56  76  90
+                 '1- 2- 3/ X. -4 -5 9/ -- X. 1/ .. ..'     //   1  3  23  37  41  46  56  56  72  82
               );
 
 
@@ -96,7 +98,7 @@ begin
                                                              result.fst := s[1];
                                                              result.snd := s[2];
                                                          end
-                                                   );
+                                                  );
 
         write('> ');
         for var f in frames do write(f.fst,f.snd,'  ');
